@@ -6,7 +6,7 @@ class MessageList extends Component {
         this.state = {
             messages: []
         };
-        this.messageRef = this.props.firebase.database().ref('rooms');
+        this.roomRef = this.props.firebase.database().ref('rooms');
         this.messageRef = this.props.firebase.database().ref('messages');
    }
 
@@ -26,15 +26,15 @@ class MessageList extends Component {
                 <h3>{this.props.currentRoom}</h3>
                     {this.state.messages
                         .filter (message => 
-                         this.props.currentRoom === message.roomId)
-                        .map( (message, index) => (
-                            console.log(message)
-/*                          <div key={index}>
-                            <div>{message.username}</div>
-                            <div>{message.content}</div>
-                            <div>{message.sentAt}</div>
-                        </div>  */
-                         ))
+                         this.props.currentRoomId == message.roomId)
+                        .map( (message, index) => {
+                            return <div key={index}>
+                                <div>User: {message.username}</div>
+                                <div>At: {message.sentAt}</div>
+                                <div>Said: {message.content}</div>
+                                <br></br>
+                            </div> 
+                        })
                         }
             </section>
         )

@@ -26,13 +26,6 @@ class App extends Component {
     };
     this.handleRoomClick = this.handleRoomClick.bind(this);
   }
-/* 
-  handleRoomClick(room) {
-    this.setState({
-      currentRoom: room.name,
-      currentRoomKey: room.key,
-    });
-  }  */
 
   handleRoomClick(room) {
     this.setState({ currentRoom: room.name });
