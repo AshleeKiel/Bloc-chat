@@ -2,10 +2,26 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.rows {
+  display: flex;
+  border: solid gray;
+  background-color: yellow;
+}
+
+.roomList {
+  background-color: aquamarine;
+  border: solid navy;
+  border-radius: 5px;
+  width: 30%;
+  margin: 0.7em;
+}
+
+.messageList {
+  background-color: orange;
+  border: solid gray;
+  border-radius: 5px;
+  width: 70%;
+  margin: 0.7em;
 }
 
 .App-header {

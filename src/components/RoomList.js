@@ -9,6 +9,7 @@ class RoomList extends Component {
       };
 
     this.roomsRef = this.props.firebase.database().ref('rooms');
+
     }
 
     componentDidMount () {
@@ -37,11 +38,18 @@ class RoomList extends Component {
 
     render () {
         return (
-            <section className="chatRooms">
-                {this.state.rooms.map( (room) => 
-                   <div key={room.key}>{room.name}</div>
+            <div>
+            <table className="chatRooms">
+            <tbody>
+                {this.state.rooms.map( (room, index) => 
+                   <tr key={index}> 
+                   <td onClick={ () => 
+                    this.props.handleRoomClick(room)}>{room.name}</td>
+                    </tr>
                 )}
-
+            </tbody>
+            </table>
+            <div>
                 <form className="newRoomForm" 
                     onSubmit={(e) => this.handleSubmit(e)}>
                     <input 
@@ -53,7 +61,9 @@ class RoomList extends Component {
                         type="submit"
                         value="Add New Room" />
                 </form>
-            </section>
+                </div>
+                </div>
+            
         );
     }
 
