@@ -49,7 +49,7 @@ class App extends Component {
         <section className="rows">    
           <section className="roomList">
             <RoomList 
-              handleRoomClick={this.handleRoomClick.bind(this)}            
+              handleRoomClick={this.handleRoomClick}            
               firebase={firebase}/>
           </section>
 
